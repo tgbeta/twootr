@@ -6,4 +6,12 @@ import axios from 'axios';
 
 export default function Main() {
 
+
+    return (
+        <main>
+            <Account />
+            <Twoot />
+            <TwootList />
+        </main>
+    );
 }
