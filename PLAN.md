@@ -29,15 +29,18 @@ so that I can share my opinion in a clear way
 
 # Data Structure
 ```js
-users = [user1, user2, ...]
-user = {
+//Account's list
+const accounts = [user1, user2, ...]
+//Account
+const account = {
     id: 0,
     firstName: '',
     lastName: '',
     nickname: ''
 }
-
+//Post's list
 posts = [post1, post2, ...]
+//Post
 post = {
     id: 0,
     userId: 0,
