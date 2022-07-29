@@ -48,16 +48,16 @@ post = {
 
 # HTML Structure
 - body
-  - header
+  - header - Header.jsx
     - h1 title
-  - main
-    - section account
+  - main - Main.jsx
+    - section account - Account.jsx
       - avatar img
       - name field
       - nickname field
-    - section new twoot
+    - section new twoot - Twoot.jsx
       - text field
-    - section all twoots
+    - section all twoots - TwootList.jsx
         - div twoots
 
 # Component Structure
