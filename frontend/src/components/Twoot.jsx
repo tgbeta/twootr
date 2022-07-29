@@ -5,7 +5,12 @@ export default function Twoot(props) {
 
     return (
         <section>
-            <h2>Test Twoot</h2>
+            <div>
+                <h2>Test Twoot</h2>
+                <p>What are you humming about?</p>
+                <button>Twoot</button>
+                <p>Character Count</p>
+            </div>
         </section>
     );
 }
