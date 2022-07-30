@@ -5,11 +5,11 @@ import AvatarSection from './AvatarSection';
 import Account from './Account';
 export default function Main() {
 
+    const [twoot, setTwoot] = useState([]);
 
     return (
         <>
-            <Account/>
-            <Twoot />
+            <Twoot twoot={twoot} setTwoots={setTwoot}/>
             <TwootList />
         </>
     );
