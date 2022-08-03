@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react';
 import Twoot from './Twoot';
 import TwootList from './TwootList';
 import axios from 'axios';
-import AvatarSection from './AvatarSection';
 import Account from './Account';
 
 
@@ -21,6 +20,7 @@ export default function Main() {
 
     return (
         <>
+            <Account/>
             <Twoot twoot={twoot} setTwoot={setTwoot}/>
             <TwootList />
         </>
