@@ -13,10 +13,10 @@ export default function Header() {
     
     <StyledHeader>
         <div>
-          <p>TWOOTR</p>
+          <p style={{color:"white",paddingLeft:"30px",fontSize:"20px"}}>TWOOTR</p>
         </div>
         <div>
-          <p>Write a new tweet</p>
+          <p style={{color:"white",paddingRight:"30px",fontSize:"20px"}} >Write a new tweet</p>
         </div>
     </StyledHeader>
   )
