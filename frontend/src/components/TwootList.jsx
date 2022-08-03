@@ -15,14 +15,15 @@ export default function TwootList() {
     function countDays(dateTwoot) {
         const currentDate = new Date();
         const datePost = new Date(dateTwoot);
-        
-        if (currentDate === datePost) {
+
+        const diffTime = currentDate.getTime() - datePost.getTime();
+        const diffDay = diffTime / (1000 * 3600 * 24);
+
+        if (diffDay < 1) {
             return ("today");
         } else {
-            const diffTime = currentDate.getTime() - datePost.getTime();
-            console.log(diffTime);
-            const diffDay = Math.round(diffTime / (1000 * 3600 * 24));
-            return diffDay;
+            const date = Math.round(diffDay);
+            return (date+" day(s) ago");
         }
         
     }
@@ -37,7 +38,7 @@ export default function TwootList() {
                     <div>Author: {twoot.author}</div>
                     <div>{twoot.authorSlug}</div>
                     <div>{twoot.dateAdded}</div>
-                    <div>Posted {countDays(twoot.dateAdded)} day(s) ago</div>
+                    <div>Posted {countDays(twoot.dateAdded)}</div>
                     <div>Text: {twoot.content}</div>
                     </div>)
                 } 

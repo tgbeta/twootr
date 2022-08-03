@@ -6,8 +6,3 @@ export const StyledForm = styled.form`
   margin: 1em 0;
 `;
 
-export const StyledFormField = styled.form`
-  margin-bottom: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-`;

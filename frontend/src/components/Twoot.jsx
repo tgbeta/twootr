@@ -6,13 +6,14 @@ export default function Twoot(props) {
 
     const { twoot, setTwoot } = props;
     const [twootText, setTwootText] = useState('');
-
+    const [countChar, setCount] = useState('');
 
     const current = new Date();
     const date = `${current.getFullYear()}-${current.getMonth()+1}-${current.getDate()}`;
 
     const handleInputChange = (e) => {
         setTwootText(e.target.value);
+        setCount(e.target.value.length);
     };
 
     const handleSubmit = (event) => {
@@ -42,13 +43,11 @@ export default function Twoot(props) {
         <section>
             <div>
             <StyledForm onSubmit={handleSubmit}>
-                <h2>Compose Twoot</h2>
-                <StyledFormField>
+                <h2>Compose Twoot</h2>               
                     <p>What are you humming about?</p>
-                    <input type='text' name='description' value={twootText} onChange={handleInputChange} />
-                </StyledFormField>
+                    <input type='text' name='description' value={twootText} onChange={handleInputChange} />   
                     <button>Twoot</button>
-                    <p>Character Count</p>
+                    <p>{countChar}</p>
             </StyledForm>
             </div>
         </section>
