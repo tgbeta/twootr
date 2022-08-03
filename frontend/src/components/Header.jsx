@@ -7,16 +7,17 @@ export default function Header() {
     display:flex;
     justify-content:space-between;
     background-color:#EB1D36;
-    
+    align-items:center;
+    height:70px;
   `
   return (
     
     <StyledHeader>
-        <div>
-          <p style={{color:"white",paddingLeft:"30px",fontSize:"20px"}}>TWOOTR</p>
+        <div style={{paddingLeft:"40px"}}>
+          <p style={{color:"white",fontSize:"40px",fontFamily:"Monoton",letterSpacing:"3px"}}>TWOOTR</p>
         </div>
-        <div>
-          <p style={{color:"white",paddingRight:"30px",fontSize:"20px"}} >Write a new tweet</p>
+        <div style={{paddingRight:"40px"}}>
+          <p style={{color:"white",fontSize:"20px"}} >Write a new tweet</p>
         </div>
     </StyledHeader>
   )
