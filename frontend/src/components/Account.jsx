@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
+import styled from 'styled-components'
+
 export default function Account(props) {
-  const[username,setUsername]=useState('NicolasM');
+  const[username,setUsername]=useState('@NicolasM');
   const[input1,setInput1]=useState('');
   
   const handleClick=(e)=>{
@@ -14,15 +16,17 @@ export default function Account(props) {
   }
 
   return (
-    <div>
+     
+    <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
       <h2>Create your Avatar</h2>
       <form >
       <h2>{input1}</h2>
       <input onChange={name1} value={input1} type="text" />
       <button type="button" onClick={handleClick} >New Account</button>
       </form>
-      <h3>{username}</h3>
-      <img src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" />
+      <img className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" />
+      <h3>{username}</h3>  
     </div>
+    
   )
 }
