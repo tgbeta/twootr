@@ -1,6 +1,15 @@
-import React,{useState} from 'react'
-import styled from 'styled-components'
+import React,{useState} from 'react';
+import styled from 'styled-components';
 
+const StyledUserSection=styled.section`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+`
+const StyledForm=styled.form`
+  
+`
 export default function Account(props) {
   const[username,setUsername]=useState('@NicolasM');
   const[input1,setInput1]=useState('');
@@ -16,17 +25,20 @@ export default function Account(props) {
   }
 
   return (
-     
-    <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+
+    <StyledUserSection>
+    <div>
+
       <h2>Create your Avatar</h2>
       <form >
       <h2>{input1}</h2>
       <input onChange={name1} value={input1} type="text" />
       <button type="button" onClick={handleClick} >New Account</button>
       </form>
-      <img className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" />
-      <h3>{username}</h3>  
+      <img style={{height:"auto",width:"270px"}} className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" />
+      <h3>{username}</h3>
     </div>
+    </StyledUserSection>
     
   )
 }
