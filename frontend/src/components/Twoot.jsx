@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { StyledForm } from '../styles/Form.styles';
+import Account from './Account';
 
 export default function Twoot(props) {
 
@@ -21,10 +22,10 @@ export default function Twoot(props) {
         console.log('submitted', twootText);
         const newTwoot = {
           _id: twoot.length + 1,
-          author: "TesteNome",
+          author: Account.name,
           content: twootText,
           //tag: "other",
-          authorSlug: "TesteAuthorSlug",
+          authorSlug: Account.username,
           length: countChar,
           dateAdded: date,
           dateModified: date,

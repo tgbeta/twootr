@@ -10,4 +10,17 @@ export const StyledHeader = styled.header`
         background: none;
         padding:0;
     }
+
+    p .logo {
+        color:white;
+        fontSize:40px;
+        fontFamily:Monoton;
+        letterSpacing:3px;
+    }
+
+    p {
+        color:white;
+        paddingRight:30px;
+        fontSize:20px;
+    }
 `;
