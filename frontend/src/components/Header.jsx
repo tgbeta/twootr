@@ -8,10 +8,10 @@ export default function Header() {
     
     <StyledHeader>
         <div style={{paddingLeft:"40px"}}>
-          <p style={{color:"white",fontSize:"40px",fontFamily:"Monoton",letterSpacing:"3px"}}>TWOOTR</p>
+          <p id="logo">TWOOTR</p>
         </div>
         <div>
-          <button style={{color:"white",paddingRight:"30px",fontSize:"20px"}} >Write a new tweet</button>
+          <button>Write a new tweet</button>
         </div>
     </StyledHeader>
   )
