@@ -34,12 +34,12 @@ export default function TwootList() {
             <div>
                 {          
                               
-                    twoots.map(twoot => <div id={twoot._id}>
-                    <div>Author: {twoot.author}</div>
-                    <div>{twoot.authorSlug}</div>
-                    <div>{twoot.dateAdded}</div>
-                    <div>Posted {countDays(twoot.dateAdded)}</div>
-                    <div>Text: {twoot.content}</div>
+                    twoots.map(twoot => <div id={twoot._id} key={twoot._id}>
+                        <div>Author: {twoot.author}</div>
+                        <div>{twoot.authorSlug}</div>
+                        <div>{twoot.dateAdded}</div>
+                        <div>Posted {countDays(twoot.dateAdded)}</div>
+                        <div>Text: {twoot.content}</div>
                     </div>)
                 } 
             </div>
