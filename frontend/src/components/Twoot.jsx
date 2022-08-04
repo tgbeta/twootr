@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { StyledForm, StyledFormField } from '../styles/Form.styles';
+import { StyledForm } from '../styles/Form.styles';
+import Account from './Account';
 
 export default function Twoot(props) {
 
@@ -21,11 +22,11 @@ export default function Twoot(props) {
         console.log('submitted', twootText);
         const newTwoot = {
           _id: twoot.length + 1,
-          author: "TesteNome",
+          author: Account.name,
           content: twootText,
-          tag: "other",
-          authorSlug: "TesteAuthorSlug",
-          length: "90",
+          //tag: "other",
+          authorSlug: Account.username,
+          length: countChar,
           dateAdded: date,
           dateModified: date,
         };
@@ -34,6 +35,7 @@ export default function Twoot(props) {
           .then((res) => {
             console.log('res', res);
             setTwoot([...twoot, { ...res.data }]);
+            window.location.reload(false);
           })
           .catch((err) => console.log('err', err));
     };
@@ -45,8 +47,8 @@ export default function Twoot(props) {
             <StyledForm onSubmit={handleSubmit}>
                 <h2>Compose Twoot</h2>               
                     <p>What are you humming about?</p>
-                    <input type='text' name='description' value={twootText} onChange={handleInputChange} />   
-                    <button>Twoot</button>
+                    <input type="text" name="description" value={twootText} onChange={handleInputChange} />   
+                    <button disabled={!twootText}>Twoot</button>
                     <p>{countChar}</p>
             </StyledForm>
             </div>
