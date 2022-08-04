@@ -30,7 +30,7 @@ export default function Account() {
       <div style={{height:"40px",marginTop:"10px"}}><h2 style={{textAlign:"center",fontSize:"35px"}}>{input1}</h2></div>
       </form>
       <div style={{display:"flex",justifyContent:'center',alignItems:"center",marginTop:"10px",marginBottom:"20px"}}><h3 style={{color:"#f57171"}}>{username}</h3></div>
-      <input onChange={name1} value={input1} type="text" />
+      <input maxLength={10} onChange={name1} value={input1} type="text" />
       <button type="button" onClick={handleClick} >New Account</button>
     </div>
     </StyledUserSection>
