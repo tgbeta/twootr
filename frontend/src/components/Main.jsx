@@ -22,7 +22,7 @@ export default function Main() {
     return (
         <>
             <Account username={username} name={name} setName={setName} setUsername={setUsername}/>
-            <Twoot twoot={twoot} setTwoot={setTwoot}/>
+            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name}/>
             <TwootList />
         </>
     );

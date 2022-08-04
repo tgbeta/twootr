@@ -3,13 +3,10 @@ import axios from "axios";
 import { StyledForm } from '../styles/Form.styles';
 import Account from './Account';
 
-
 export default function Twoot(props) {
 
     const { twoot, setTwoot } = props;
     const { username, name } = props;
-
-    console.log(username,name)
 
     const [twootText, setTwootText] = useState('');
     const [countChar, setCount] = useState('');
@@ -22,9 +19,6 @@ export default function Twoot(props) {
         setCount(e.target.value.length);
     };
 
-    console.log(Account.username);
-    console.log(Account.input1);
-
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('submitted', twootText);
@@ -32,7 +26,7 @@ export default function Twoot(props) {
           _id: twoot.length + 1,
           author: name,
           content: twootText,
-          //tag: "other",
+          tag: "other",
           authorSlug: username,
           length: countChar,
           dateAdded: date,
