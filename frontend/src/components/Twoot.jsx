@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { StyledForm } from '../styles/Form.styles';
-import Account from './Account';
 
 export default function Twoot(props) {
 
