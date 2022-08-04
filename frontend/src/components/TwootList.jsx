@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
+
 export default function TwootList() {
 
     const [twoots, setTwoots] = useState([]);
@@ -40,6 +41,9 @@ export default function TwootList() {
                         <div>{twoot.dateAdded}</div>
                         <div>Posted {countDays(twoot.dateAdded)}</div>
                         <div>Text: {twoot.content}</div>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-bookmark"></i>
+                        <i class="fa-solid fa-retweet"></i>
                     </div>)
                 } 
             </div>
