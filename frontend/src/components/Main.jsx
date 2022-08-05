@@ -11,6 +11,12 @@ export default function Main() {
     const [username,setUsername]=useState('@NicolasM');
     const [name,setName]=useState('');
 
+    //Buttons
+    const [like, setLike] = useState(false);
+    const [save, setSave] = useState(false);
+
+    const likeStatus = like === true ? 'yes' : 'no';
+
     useEffect(() => {
         axios.get('/twoots').then((res) => {
           console.log('get twoots data', res.data);
@@ -22,7 +28,7 @@ export default function Main() {
     return (
         <>
             <Account username={username} name={name} setName={setName} setUsername={setUsername}/>
-            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name}/>
+            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name} like={like} save={save} setLike={setLike} setSave={setSave} likeStatus={likeStatus}/>
             <TwootList />
         </>
     );
