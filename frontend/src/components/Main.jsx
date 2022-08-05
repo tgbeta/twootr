@@ -8,7 +8,8 @@ import Account from './Account';
 export default function Main() {
 
     const [twoot, setTwoot] = useState([]);
-
+    const [username,setUsername]=useState('@NicolasM');
+    const [name,setName]=useState('');
 
     useEffect(() => {
         axios.get('/twoots').then((res) => {
@@ -20,8 +21,8 @@ export default function Main() {
 
     return (
         <>
-            <Account/>
-            <Twoot twoot={twoot} setTwoot={setTwoot}/>
+            <Account username={username} name={name} setName={setName} setUsername={setUsername}/>
+            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name}/>
             <TwootList />
         </>
     );
