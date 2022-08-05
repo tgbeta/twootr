@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { StyledList } from '../styles/TwootList.styles';
 
+export default function TwootList(props) {
 
-export default function TwootList() {
+    const {like, setLike} = props;
+    const {save, setSave} = props;
 
     const [twoots, setTwoots] = useState([]);
 
-    useEffect (() => {
-        axios.get(`http://localhost:8080/twoots`).then((res) => {
-        setTwoots(res.data);
-        });
-    }, []);
+    //Buttons
+    const handleLike = () => {
+        setLike(!like)
+    }
+
+    const handleSave = () => {
+        setSave(!save)
+    }
+
+    const handleRetweet = () => {
+        setSave(!save)
+    }
 
     // Date
     function countDays(dateTwoot) {
@@ -28,10 +38,17 @@ export default function TwootList() {
         }
         
     }
+
+    useEffect (() => {
+        axios.get(`http://localhost:8080/twoots`).then((res) => {
+        setTwoots(res.data);
+        });
+    }, []);
     
     return (
         <section>
             <h2>Test Twoot List</h2>
+            <StyledList>
             <div>
                 {          
                               
@@ -41,12 +58,13 @@ export default function TwootList() {
                         <div>{twoot.dateAdded}</div>
                         <div>Posted {countDays(twoot.dateAdded)}</div>
                         <div>Text: {twoot.content}</div>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-bookmark"></i>
-                        <i class="fa-solid fa-retweet"></i>
+                        <button onclick={handleLike}><i class="fa-solid fa-heart"></i></button>
+                        <button onclick={handleSave}><i class="fa-solid fa-bookmark"></i></button>
+                        <button onclick={handleRetweet}><i class="fa-solid fa-retweet"></i></button>
                     </div>)
                 } 
             </div>
+            </StyledList>
         </section>
     );
 }
