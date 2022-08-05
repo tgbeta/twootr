@@ -4,32 +4,25 @@ import TwootList from './TwootList';
 import axios from 'axios';
 import Account from './Account';
 
-
 export default function Main() {
 
     const [twoot, setTwoot] = useState([]);
     const [username,setUsername]=useState('@NicolasM');
     const [name,setName]=useState('');
 
-    //Buttons
-    const [like, setLike] = useState(false);
-    const [save, setSave] = useState(false);
-
-    const likeStatus = like === true ? 'yes' : 'no';
-
     useEffect(() => {
-        axios.get('/twoots').then((res) => {
+        axios.get('http://localhost:8080/twoots').then((res) => {
           console.log('get twoots data', res.data);
           setTwoot(res.data);
-        });
+        }).catch(err=>console.log(err))
     }, []);
     
 
     return (
         <>
             <Account username={username} name={name} setName={setName} setUsername={setUsername}/>
-            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name} like={like} save={save} setLike={setLike} setSave={setSave} likeStatus={likeStatus}/>
-            <TwootList />
+            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name} />
+            <TwootList twoot={twoot} />
         </>
     );
 }
