@@ -12,6 +12,7 @@ export default function TwootList(props) {
     //Buttons
     const handleLike = () => {
         setLike(!like)
+        console.log("like")
     }
 
     const handleSave = () => {
@@ -50,8 +51,7 @@ export default function TwootList(props) {
             <h2>Test Twoot List</h2>
             <StyledList>
             <div>
-                {          
-                              
+                {
                     twoots.map(twoot => <div id={twoot._id} key={twoot._id}>
                         <div>Author: {twoot.author}</div>
                         <div>{twoot.authorSlug}</div>
