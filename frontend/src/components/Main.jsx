@@ -8,7 +8,7 @@ export default function Main() {
 
     const [twoot, setTwoot] = useState([]);
     const [username,setUsername]=useState('@NicolasM');
-    const [name,setName]=useState('');
+    const [name,setName]=useState('Nicolas M');
 
     useEffect(() => {
         axios.get('http://localhost:8080/twoots').then((res) => {
