@@ -10,6 +10,5 @@ export const StyledForm = styled.form`
   .form-title{
     font-size:40px;
   }
-
 `;
 

@@ -14,7 +14,7 @@ export default function TwootList(props) {
 
     return (
         <section>
-            <h2>Test Twoot List</h2>
+            <h2 style={{padding:"2rem"}}>See what people is humming about</h2>
             <div>
                 {          
                     twoots.length > 0 &&           
