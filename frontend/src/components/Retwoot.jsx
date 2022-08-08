@@ -2,7 +2,12 @@ import React from 'react';
 
 export default function RetwootText(props) {
 
-    return {
+    const {retwootText} = props;
 
-    }
+    return (
+        <div>
+            <span>{retwootText}</span>
+        </div>
+        
+    );
 }
