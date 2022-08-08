@@ -61,7 +61,7 @@ function handleInput(e){
 
     <StyledUserSection>
     <div>
-      <div className='account-container'><img class='avatar-main-img' className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
+      <div className='account-container'><img className='avatar-main-img' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
       <form >
       <div className='avatar-section'>
       <h2 style={{textAlign:"center",fontSize:"35px"}}>{name}</h2>
