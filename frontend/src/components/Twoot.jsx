@@ -3,7 +3,7 @@ import axios from "axios";
 import { StyledForm } from '../styles/Form.styles';
 
 export default function Twoot(props) {
-
+    const {focus}=props
     const { twoot, setTwoot } = props;
     const { username, name } = props;
 
@@ -47,7 +47,7 @@ export default function Twoot(props) {
             <StyledForm onSubmit={handleSubmit}>
                 <h2 className='form-title'>Compose Twoot</h2> 
                 <div className='twoot-container'>               
-                    <input  maxLength={140} autocomplete="off" placeholder='What are you humming about?' className='twoot-input' type="text" name="description" value={twootText} onChange={handleInputChange} />
+                    <input ref={focus}  maxLength={140} autocomplete="off" placeholder='What are you humming about?' className='twoot-input' type="text" name="description" value={twootText} onChange={handleInputChange} />
                     <div style={{display:"flex", alignItems:"center",justifyContent:"space-between"}}> 
                     <button className='twoot-btn' disabled={!twootText}>Twoot</button>
                      <div style={{marginRight:"100px"}}><p>{countChar}</p></div>

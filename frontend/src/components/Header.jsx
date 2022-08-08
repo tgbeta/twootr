@@ -1,11 +1,10 @@
-import React,{ useEffect, useRef } from 'react';
+import React,{  useRef } from 'react';
 import styled from 'styled-components';
-import Focus from './Focus';
-export default function Header() {
-  const searchInput = useRef(null)
+export default function Header(props) {
+  const {focus}=props
 
-  function handleFocus(){
-    searchInput.current.focus()
+  function changeFocus(){
+    focus.current.focus()
   }
 
   const StyledHeader = styled.header`
@@ -43,7 +42,7 @@ export default function Header() {
           <a href='' className='logo'id='log'>TWOOTR</a>
         </div>
         <div className='new-tweet'id="bnt">
-        <Focus/>
+        <button onClick={changeFocus}  className='btn-nostyle' style={{fontSize:"25px"}}>Write a new tweet</button> 
         </div>
     </StyledHeader>
   )

@@ -13,7 +13,7 @@ export default function Account(props) {
   const { username, setUsername } = props;
   const { name, setName} = props;
   const [input,setInput]=useState(false);
-  
+
   const handleClick=(e)=>{
      setUsername(name.replace(/ /,"-"));
      setInput(current=>!current)
