@@ -62,23 +62,27 @@ post = {
       - text field
     - section all twoots - TwootList.jsx
         - div twoots
+          - div retwoot
 
 # Component Structure
 - App
   - Header
   - Main (accounts, twoots)
     - Account
-    - Twoots
+    - Twoot
+    - Twoot List
+      - Single Twoot
+      - Retwoot
 
 # Data Map
 User ID <> Post 
 
 # Styling Patterns (Fonts and Colors)
 Colors:
-    Navbar / Button : #711a75
-    Background Header : #413f42
-    Background Main : #f4f1ec
-    Active Icons : f73d93
+    Navbar / Button : #414141
+    Background Header : #414141
+    Background Main : #ca7900ff
+    Active Icons : #000000/#FF0000
     Font / Box shadow : #888888
 
 Fonts (Google):

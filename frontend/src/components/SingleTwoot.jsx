@@ -11,6 +11,7 @@ export default function SingleTwoot(props) {
     const [like, setLike] = useState(false);
     const [save, setSave] = useState(false);
     const [retwoot, setRetwoot] = useState(false);
+    const [retwootText, setRetwootText] = useState('');
 
     //Buttons
     const handleLike = () => {
@@ -23,6 +24,10 @@ export default function SingleTwoot(props) {
 
     const handleRetwoot = () => {
         setRetwoot(!retwoot);
+    }
+
+    const createRetwoot = () => {
+        
     }
 
     // Date
@@ -59,12 +64,19 @@ export default function SingleTwoot(props) {
                         <button className="like"  onClick={handleLike}><i class={`fa-solid fa-heart ${like}`}></i></button>
                         <button className='save'  onClick={handleSave}><i class={`fa-solid fa-bookmark ${save}`}></i></button>
                         <button className='retweet'  onClick={handleRetwoot}><i class={`fa-solid fa-retweet ${retwoot}`}></i></button>
+
                         { 
                             retwoot === true && (
                                 <div>
-                                <input type="text" id="retwootText"/>
-                                <button>Submit</button>
-                                
+                                <input 
+                                    type="text" 
+                                    id="retwootText" 
+                                    size="140"
+                                    value={retwootText}
+                                    onChange={(e) => setRetwootText(e.target.value)}
+                                />
+                                <button onClick={createRetwoot}>Submit</button>
+                                <RetwootText retwootText={retwootText} />
                                 </div>
                             )
 
