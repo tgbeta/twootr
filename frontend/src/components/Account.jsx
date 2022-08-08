@@ -12,30 +12,30 @@ align-items:center;
   display:flex;
   justify-content:center;
 }
-.avatar-main{
+.avatar-main-img{
   height:auto;
   width:270px;
   margin-top:30px;
 }
 .avatar-section{
   height:40px;
-  marginTop:10px;
+  margin-top:10px;
   display:flex;
-  justifyContent:center;
-  alignItems:center;
+  justify-content:center;
+  align-items:center;
   width:600px;
 }
 .avatar-img-container{
   display:flex;
-  justifyContent:center;
-  alignItems:center;
-  marginTop:10px;
-  marginBottom:20px;
+  justify-content:center;
+  align-items:center;
+  margin-top:10px;
+  margin-bottom:20px;
 }
 .username-input{
-  marginLeft:60px;
+  margin-left:60px;
   height:60px;
-  fontSize:40px;
+  font-size:40px;
   padding:5px;
   width:400px;
 }
@@ -61,7 +61,7 @@ function handleInput(e){
 
     <StyledUserSection>
     <div>
-      <div className='account-container'><img class='avatar-main' className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
+      <div className='account-container'><img class='avatar-main-img' className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
       <form >
       <div className='avatar-section'>
       <h2 style={{textAlign:"center",fontSize:"35px"}}>{name}</h2>
