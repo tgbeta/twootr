@@ -1,7 +1,13 @@
-import React from 'react';
+import React,{ useEffect, useRef } from 'react';
 import styled from 'styled-components';
-
+import Focus from './Focus';
 export default function Header() {
+  const searchInput = useRef(null)
+
+  function handleFocus(){
+    searchInput.current.focus()
+  }
+
   const StyledHeader = styled.header`
   display:flex;
   align-items:center;
@@ -37,7 +43,7 @@ export default function Header() {
           <a href='' className='logo'id='log'>TWOOTR</a>
         </div>
         <div className='new-tweet'id="bnt">
-          <a href=''>Write a new tweet</a>
+        <Focus/>
         </div>
     </StyledHeader>
   )

@@ -7,7 +7,7 @@ import Account from './Account';
 export default function Main() {
 
     const [twoot, setTwoot] = useState([]);
-    const [username,setUsername]=useState('@NicolasM');
+    const [username,setUsername]=useState('NicolasM');
     const [name,setName]=useState('Nicolas M');
 
     useEffect(() => {

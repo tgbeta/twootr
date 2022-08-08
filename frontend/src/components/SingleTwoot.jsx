@@ -44,15 +44,21 @@ export default function SingleTwoot(props) {
 
     return (
                 <StyledTwoot>
-                    <div id={twoot._id} key={twoot._id}>
-                        <div>Author: {twoot.author}</div>
-                        <div>{twoot.authorSlug}</div>
-                        <div>{twoot.dateAdded}</div>
+                    <div className='tweet-main' id={twoot._id} key={twoot._id}>
+                        <div className='author-section'>
+                        <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                        <img style={{height:"auto",width:"60px"}} src={`https://avatars.dicebear.com/api/big-smile/${twoot.authorSlug}.svg`} alt="" />
+                        {twoot.author}
+                        </div>
+                        <div style={{display:"flex",alignItems:"center"}}>@{twoot.authorSlug}</div>
+                        </div>
+                        <div className='tweet'><p style={{marginBottom:"5px"}}>{twoot.content}</p></div>
+                        <section className='posted-like-container'>
                         <div>Posted {countDays(twoot.dateAdded)}</div>
-                        <div>Text: {twoot.content}</div>
-                        <button onClick={handleLike}><i class={`fa-solid fa-heart ${like}`}></i></button>
-                        <button onClick={handleSave}><i class={`fa-solid fa-bookmark ${save}`}></i></button>
-                        <button onClick={handleRetwoot}><i class={`fa-solid fa-retweet ${retwoot}`}></i></button>
+                        <div>
+                        <button className="like"  onClick={handleLike}><i class={`fa-solid fa-heart ${like}`}></i></button>
+                        <button className='save'  onClick={handleSave}><i class={`fa-solid fa-bookmark ${save}`}></i></button>
+                        <button className='retweet'  onClick={handleRetwoot}><i class={`fa-solid fa-retweet ${retwoot}`}></i></button>
                         { 
                             retwoot === true && (
                                 <div>
@@ -61,8 +67,10 @@ export default function SingleTwoot(props) {
                                 
                                 </div>
                             )
-                             
+
                         }
+                        </div>
+                        </section>
                     </div>
                 </StyledTwoot>
     );

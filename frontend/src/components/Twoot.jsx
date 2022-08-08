@@ -46,10 +46,13 @@ export default function Twoot(props) {
             <div>
             <StyledForm onSubmit={handleSubmit}>
                 <h2 className='form-title'>Compose Twoot</h2> 
-                    <label for="name" class="form__label">What are you humming about?</label>              
-                    <input placeholder='Your tweet here' className='twoot-input' type="text" name="description" value={twootText} onChange={handleInputChange} />   
-                    <button disabled={!twootText}>Twoot</button>
-                    <p>{countChar}</p>
+                <div className='twoot-container'>               
+                    <input  maxLength={140} autocomplete="off" placeholder='What are you humming about?' className='twoot-input' type="text" name="description" value={twootText} onChange={handleInputChange} />
+                    <div style={{display:"flex", alignItems:"center",justifyContent:"space-between"}}> 
+                    <button className='twoot-btn' disabled={!twootText}>Twoot</button>
+                     <div style={{marginRight:"100px"}}><p>{countChar}</p></div>
+                    </div>
+                </div>
             </StyledForm>
             </div>
         </section>

@@ -15,7 +15,7 @@ export default function Account(props) {
   const [input,setInput]=useState(false);
   
   const handleClick=(e)=>{
-     setUsername('@'+name.replace(/ /,"-"));
+     setUsername(name.replace(/ /,"-"));
      setInput(current=>!current)
   }
 
@@ -30,19 +30,19 @@ function handleInput(e){
 
     <StyledUserSection>
     <div>
-    <img style={{height:"auto",width:"270px",marginTop:"30px"}} className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" />
+      <div style={{display:"flex",justifyContent:"center"}}><img style={{height:"auto",width:"270px",marginTop:"30px"}} className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
       <form >
-      <div style={{height:"40px",marginTop:"10px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+      <div style={{height:"40px",marginTop:"10px",display:"flex",justifyContent:"center",alignItems:"center",width:"600px"}}>
       <h2 style={{textAlign:"center",fontSize:"35px"}}>{name}</h2>
       <button type="button" onClick={handleInput} className="btn-nostyle"> <i style={{marginLeft:"10px",color:"#ca7900ff"}} class="fa-solid fa-file-pen fa-xl" ></i></button>
       </div>
       </form>
       <div style={{display:"flex",justifyContent:'center',alignItems:"center",marginTop:"10px",marginBottom:"20px"}}>
-      <h3 style={{color:"#f57171"}}>{username}</h3>
+      <h3 style={{color:"#f57171"}}>@{username}</h3>
       </div>
       <div className={input ? "" : "hide"} id={input?"popup":""}>
       <div className='popup-inner'>
-      <input style={{marginLeft:"60px",height:"30px", fontSize:"25px"}} maxLength={10} onChange={name1} value={name} type="text" />
+      <input style={{marginLeft:"60px",height:"60px", fontSize:"40px",padding:"5px",width:"400px"}}  onChange={name1} value={name} type="text" />
       <button style={{fontSize:"22px"}} className='popup-btn' type="button" onClick={handleClick} >New Account</button>
       </div>
       </div>
