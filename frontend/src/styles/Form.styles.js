@@ -28,11 +28,17 @@ export const StyledForm = styled.form`
     margin-bottom:20px;
   }
 .twoot-btn{
+  background-color:#b500b7ff;
+  color:white;
   width:fit-content;
   font-size:20px;
   padding:8px;
   margin-left:100px;
   border-radius:10px;
+}
+.twoot-btn:disabled,
+.twoot-btn[disabled]{
+  background-color:rgba(19, 1, 1, 0.3);
 }
 `;
 
