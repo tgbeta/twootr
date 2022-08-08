@@ -1,7 +1,12 @@
-import React from 'react';
+import React,{  useRef } from 'react';
 import styled from 'styled-components';
+export default function Header(props) {
+  const {focus}=props
 
-export default function Header() {
+  function changeFocus(){
+    focus.current.focus()
+  }
+
   const StyledHeader = styled.header`
   display:flex;
   align-items:center;
@@ -37,7 +42,7 @@ export default function Header() {
           <a href='' className='logo'id='log'>TWOOTR</a>
         </div>
         <div className='new-tweet'id="bnt">
-          <a href=''>Write a new tweet</a>
+        <button onClick={changeFocus}  className='btn-nostyle' style={{fontSize:"25px"}}>Write a new tweet</button> 
         </div>
     </StyledHeader>
   )
