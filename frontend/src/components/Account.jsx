@@ -8,6 +8,37 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+.account-container{
+  display:flex;
+  justify-content:center;
+}
+.avatar-main{
+  height:auto;
+  width:270px;
+  margin-top:30px;
+}
+.avatar-section{
+  height:40px;
+  marginTop:10px;
+  display:flex;
+  justifyContent:center;
+  alignItems:center;
+  width:600px;
+}
+.avatar-img-container{
+  display:flex;
+  justifyContent:center;
+  alignItems:center;
+  marginTop:10px;
+  marginBottom:20px;
+}
+.username-input{
+  marginLeft:60px;
+  height:60px;
+  fontSize:40px;
+  padding:5px;
+  width:400px;
+}
 `
 export default function Account(props) {
   const { username, setUsername } = props;
@@ -30,19 +61,19 @@ function handleInput(e){
 
     <StyledUserSection>
     <div>
-      <div style={{display:"flex",justifyContent:"center"}}><img style={{height:"auto",width:"270px",marginTop:"30px"}} className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
+      <div className='account-container'><img class='avatar-main' className='avatar' src={`https://avatars.dicebear.com/api/big-smile/${username}.svg`} alt="" /></div>
       <form >
-      <div style={{height:"40px",marginTop:"10px",display:"flex",justifyContent:"center",alignItems:"center",width:"600px"}}>
+      <div className='avatar-section'>
       <h2 style={{textAlign:"center",fontSize:"35px"}}>{name}</h2>
       <button type="button" onClick={handleInput} className="btn-nostyle"> <i style={{marginLeft:"10px",color:"#ca7900ff"}} class="fa-solid fa-file-pen fa-xl" ></i></button>
       </div>
       </form>
-      <div style={{display:"flex",justifyContent:'center',alignItems:"center",marginTop:"10px",marginBottom:"20px"}}>
+      <div className='avatar-img-container'>
       <h3 style={{color:"#f57171"}}>@{username}</h3>
       </div>
       <div className={input ? "" : "hide"} id={input?"popup":""}>
       <div className='popup-inner'>
-      <input style={{marginLeft:"60px",height:"60px", fontSize:"40px",padding:"5px",width:"400px"}}  onChange={name1} value={name} type="text" />
+      <input className='username-input' onChange={name1} value={name} type="text" />
       <button style={{fontSize:"22px"}} className='popup-btn' type="button" onClick={handleClick} >New Account</button>
       </div>
       </div>
