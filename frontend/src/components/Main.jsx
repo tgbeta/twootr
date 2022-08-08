@@ -4,10 +4,10 @@ import TwootList from './TwootList';
 import axios from 'axios';
 import Account from './Account';
 
-export default function Main() {
-
+export default function Main(props) {
+    const {focus}=props
     const [twoot, setTwoot] = useState([]);
-    const [username,setUsername]=useState('@NicolasM');
+    const [username,setUsername]=useState('NicolasM');
     const [name,setName]=useState('Nicolas M');
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function Main() {
     return (
         <>
             <Account username={username} name={name} setName={setName} setUsername={setUsername}/>
-            <Twoot twoot={twoot} setTwoot={setTwoot} username={username} name={name} />
+            <Twoot focus={focus} twoot={twoot} setTwoot={setTwoot} username={username} name={name} />
             <TwootList twoot={twoot} />
         </>
     );
