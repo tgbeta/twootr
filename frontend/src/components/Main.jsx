@@ -7,8 +7,8 @@ import Account from './Account';
 export default function Main(props) {
     const {focus}=props
     const [twoot, setTwoot] = useState([]);
-    const [username,setUsername]=useState('NicolasM');
-    const [name,setName]=useState('Nicolas M');
+    const [username,setUsername]=useState('TatianaB');
+    const [name,setName]=useState('Tatiana B');
 
     useEffect(() => {
         axios.get('http://localhost:8080/twoots').then((res) => {
